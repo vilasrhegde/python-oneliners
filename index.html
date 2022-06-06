@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>Oneliners-Python</title>
+</head>
+<body>
+    <h1 class="text-center text-2xl antialiased hover:subpixel-antialiased">Python Cheatsheet for One-liner solutions</h1>
+    <h2 class="text-center text-sm">shift + enter to run the code</h2>
+    <br>
+<div class="container mx-auto">
+<h1 class="text-center text-xl">String</h1>
+<h2>1.Anagram</h2>
+<py-repl>
+s1='below'
+s2='elbow'
+print('anagram') if sorted(s1)==sorted(s2) else print('not anagram')
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>2.Binary to Decimal</h2>
+<py-repl>
+decimal = int('0011',2)
+print(decimal)
+</py-repl>
+
+<div class="container mx-auto">
+    <h2>3.Octal to Decimal</h2>
+<py-repl>
+print(int('30',8))
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>4.Hexadecimal to Decimal</h2>
+<py-repl>
+print(int('da4',16))
+</py-repl>
+</div>
+<div class="container mx-auto">
+    <h2>5.Count the frequency in a string</h2>
+<py-repl>
+print('my name is vilas'.count('a'))
+</py-repl>
+</div>
+
+<h1 class="text-center text-xl">Var</h1>
+<div class="container mx-auto">
+    <h2>6.Sum of consecutive numbers</h2>
+<py-repl>
+n=10
+s=sum(range(0,n+1))
+print(s)
+
+sum_n = n*(n+1)//2
+print(sum_n)
+</py-repl>
+</div>
+<div class="container mx-auto">
+    <h2>7.Swap two values</h2>
+<py-repl>
+a=5
+b=10
+a,b=b,a 
+</py-repl>
+</div>
+
+<h1 class="text-center text-xl">List</h1>
+
+<div class="container mx-auto">
+    <h2>8.Extend a list</h2>
+<py-repl>
+l1=[1,2,3]
+l2=[9,8,7]
+l1.extend(l2)
+print(l1)
+</py-repl>
+</div>
+
+
+<div class="container mx-auto">
+    <h2>9.List comprehension using 'for' and 'if'</h2>
+<py-repl>
+even_list = [number for number in [1,2,3,4,5,6,7,8,9] if number % 2 == 0]
+print(even_list)
+</py-repl>
+</div>
+<div class="container mx-auto">
+    <h2>10.Reverse a list</h2>
+<py-repl>
+a=[1,3,4,5,6,7,33]
+print(a[::-1])
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>11.Longest from a list</h2>
+<py-repl>
+a=['heelo','name','fantastic','bun']
+print(max(a,key=len))
+</py-repl>
+</div>
+
+
+<div class="container mx-auto">
+    <h212.>Most frequent element</h212.>
+<py-repl>
+n = [1,4,2,2,5,65,23]
+mfe = max(set(n),key=n.count)
+print(mfe)
+</py-repl>
+</div>
+
+
+
+
+
+<div class="container mx-auto">
+    <h2>13.Remove duplicates from list</h2>
+<py-repl>
+l1 = [1,2,3,2,4,3,3]
+print(set(l1))
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>14.Sorted() returns new sorted list</h2>
+<py-repl>
+l2 = sorted([1,4,2,0,-2])
+print(l2)
+</py-repl>
+</div>
+<div class="container mx-auto">
+    <h2>15.Sort() doesn't returns anything instead sorts original list only</h2>
+<py-repl>
+l1=[1,33,-2,0,4]
+l1.sort()   
+print(l1)
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>16.Reverse sorting</h2>
+<py-repl>
+l2 = sorted([1,4,2,0,-2],reverse=True   )
+print(l2)
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>17.map()</h2>
+<py-repl>
+l1=list(map(int,['1','2','4','8']))
+print(l1)
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>18.Unpacking values</h2>
+<py-repl>
+a,*b,c = [1,2,3,4,5,6]
+print(a)
+print(b)
+print(c)
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>19.lambda</h2>
+<py-repl>
+print(list(filter(lambda x: x%2 == 0,[1,2,3,4,5,6,7,8,9])))
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>20.Remove numbers from a list</h2>
+<py-repl>
+s=''.join(list(filter(lamda x: x.isalpha(),'abc3g44gkfkd0')))
+print(s)
+</py-repl>
+</div>
+
+<h1 class="text-center text-xl">Dictionaries</h1>
+
+<div class="container mx-auto">
+    <h2>21.Merge two Dictionaries</h2>
+<py-repl>
+d1 = {'a':1,'b':2,'c':3}
+d2 = {'d':4,'e':5,'f':6}
+
+d1.update(d2)
+
+print(d1)
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>22.Dictionary comprehension</h2>
+<py-repl>
+d = {x: x*x for x in range(0,10)} 
+print(d)
+</py-repl>
+</div>
+
+<h1 class="text-center text-xl">Etc.</h1>
+
+
+<div class="container mx-auto">
+    <h2>23.If else</h2>
+<py-repl>
+print('hello') if 4%2 == 0 else print('bye')
+
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>24.Check the datatype</h2>
+<py-repl>
+print(isinstance(2,int))
+print(isinstance('hell',list))
+</py-repl>
+</div>
+
+<div class="container mx-auto">
+    <h2>25.Write to a file using print</h2>
+<py-repl>
+print('Hello sample world',file = open('file.txt','w'))
+</py-repl>
+</div>
+
+
+<div class="container mx-auto">
+    <h2>26.Quotient and Remainder</h2>
+<py-repl>
+q,r = divmod(4,6)
+print(q)
+print(r)
+</py-repl>
+</div>
+
+<br><br><br><br><br><br><br><br>
+</body>
+</html>
