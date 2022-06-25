@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>PrepInsta Codes</title>
+</head>
+<body>
+    <div class="container mx-auto">
+    <h1 class="text-center text-xl">Recursion</h1>
+<br>
+    <h2>1. Power of Number</h2>
+<py-repl>
+def pow(a,b):
+    if b!=0:
+        return a * pow(a,b-1)
+    return 1
+a = int(input('Enter the number'))        
+b = int(input('Enter the power'))
+
+print(f'{a} to the power {b} is {pow(a,b)}')
+
+</py-repl>
+</div>   
+
+<br>
+<div class="container mx-auto">
+    <h2>2. Factorial of Number</h2>
+<py-repl>
+def fact(n):
+    if n != 0:
+        return n * fact(n-1)
+    return 1    
+inp = int(input('Enter a number\n'))
+print(f'Factorial of {inp} = {fact(inp)}') 
+</py-repl>
+</div>   
+<br>
+<h1 class="text-center text-xl">Arrays</h1>
+<div class="container mx-auto">
+    <h2>1. Second Smallest Element</h2>
+<py-repl>
+a=[10,23,-2,0,34]
+a.sort()
+print(a[1])
+</py-repl>
+<py-repl>
+a=[10,20,-1,-20,9,0,50]
+def findSmallest(a):
+    smallest=a[0]
+    for i in a:
+        if i < smallest:
+            smallest=i
+    return smallest            
+    
+smallest = findSmallest(a)            
+a.remove(smallest)
+secSmall = findSmallest(a)
+print('Second smallest element is',secSmall)
+</py-repl>
+</div>    
+<br>
+<div class="container mx-auto">
+    <h2>3. Half ASC Half DESC</h2>
+<py-repl>
+a=[10,20,-1,-20,9,0,50]
+l = len(a)
+b=sorted(a[0:l//2],reverse=False)
+c=sorted(a[l//2:],reverse=True)    
+a=b
+a.extend(c)    
+print(a) 
+</py-repl>   
+</div>
+<div class="container mx-auto">
+    <h2>3. Frequency</h2>
+<py-repl>
+d={}
+a=[10,10,40,10,2,5,3,2,40,40,40]
+
+for i in a:
+    if i not in d:
+        d[i]=1
+    else:
+        d[i]+=1
+
+for key,value in d.items():
+    print(f'{key} : {value}')
+</py-repl>    
+<py-repl>
+# Sort on the basis of Frequency
+d={}
+a=[10,10,40,10,2,5,3,2,40,40,40]
+
+for i in a: 
+    if i not in d:
+        d[i]=1
+    else:
+        d[i]+=1
+
+from collections import Counter
+result = sorted(a,key=a.count,reverse=True)
+print(result)
+</py-repl> 
+<py-repl>
+# Longest Palindrome
+a=[1, 232, 5545455, 909090, 161]
+a.sort()
+largest=0
+for i in a: 
+    b=str(i)
+    if b == b[::-1]: 
+        largest=i
+print(largest)        
+</py-repl>
+<py-repl>
+    #Non Repeating elements using dict
+a=[10, 30, 40, 20, 10, 20, 50, 10] 
+
+v=dict()
+
+for i in a: 
+    if i not in v.keys():
+        v[i]=1
+    else:
+        v[i]+=1
+for key,value in v.items():
+    if value==1:
+        print(key,end=' ')            
+</py-repl>
+<py-repl>
+    # Non repeating elements using set
+from collections import Counter
+a=[10, 30, 40, 20, 10, 20, 50, 10] 
+rem=set()
+for i in a: 
+    if a.count(i)>1: 
+        rem.add(i)
+for i in a:
+    if i not in rem:
+        print(i,end=' ')      
+</py-repl>
+<h2>4. Scalar Product</h2>
+<py-repl>
+    # Min scalar product
+arr1 = [1, 2, 6, 3, 7]
+arr2 = [10, 7, 45, 3, 7]
+
+arr1.sort()
+arr2.sort(reverse=True)
+
+prod=0
+for i in range(len(arr1)):
+    prod+=arr1[i] * arr2[i]
+print(prod)    
+</py-repl>
+<py-repl>
+    # max scalar product
+arr1 = [1, 2, 6, 3, 7]
+arr2 = [10, 7, 45, 3, 7]
+    
+arr1.sort()
+arr2.sort()
+    
+prod=0
+for i in range(len(arr1)):
+    prod+=arr1[i] * arr2[i]
+print(prod)  
+</py-repl>
+<br>
+<h2>Symmetric Pairs</h2>
+<py-repl>
+def findPairs(p):
+    l=set()
+    for (x,y) in p:
+        if (y,x) in p:
+            if (x,y) not in l:
+                l.add((y,x))
+    return l
+
+pairs = [(3, 4), (1, 2), (5, 2), (7, 10), (4, 3), (2, 5)] 
+print(findPairs(pairs))   
+</py-repl>
+</div>
+
+
+
+<br><br><br><br><br><br><br>
+</body>
+</html>
